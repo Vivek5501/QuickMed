@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/RegiserStyles.css";
+import "../styles/RegisterStyles.css";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   //form handler
   const onfinishHandler = async (values) => {
+    console.log(values)
     try {
       const res = await axios.post("/api/v1/user/login", values);
       if (res.data.success) {
